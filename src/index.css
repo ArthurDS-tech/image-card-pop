@@ -8,52 +8,52 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 220 20% 97%;
-    --foreground: 220 20% 10%;
+    --background: 190 60% 96%;
+    --foreground: 200 25% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 220 20% 10%;
+    --card-foreground: 200 25% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 20% 10%;
+    --popover-foreground: 200 25% 15%;
 
-    --primary: 220 20% 15%;
+    --primary: 193 100% 50%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 220 15% 94%;
-    --secondary-foreground: 220 20% 15%;
+    --secondary: 190 40% 92%;
+    --secondary-foreground: 200 25% 20%;
 
-    --muted: 220 15% 92%;
-    --muted-foreground: 220 10% 50%;
+    --muted: 190 30% 90%;
+    --muted-foreground: 200 15% 45%;
 
-    --accent: 220 15% 94%;
-    --accent-foreground: 220 20% 15%;
+    --accent: 193 100% 50%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 15% 90%;
-    --input: 220 15% 90%;
-    --ring: 220 20% 15%;
+    --border: 190 30% 88%;
+    --input: 190 30% 88%;
+    --ring: 193 100% 50%;
 
     --radius: 1rem;
 
     /* Voice Chat specific */
     --voice-active: 142 70% 45%;
     --voice-tag-bg: 0 0% 100%;
-    --voice-tag-shadow: 220 20% 80%;
-    --avatar-ring: 280 80% 60%;
-    --join-button: 220 20% 12%;
-    --join-button-hover: 220 20% 18%;
+    --voice-tag-shadow: 193 50% 70%;
+    --avatar-ring: 193 100% 50%;
+    --join-button: 193 100% 45%;
+    --join-button-hover: 193 100% 40%;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-primary: 193 100% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 190 40% 95%;
+    --sidebar-accent-foreground: 200 25% 15%;
+    --sidebar-border: 190 30% 90%;
+    --sidebar-ring: 193 100% 50%;
   }
 }
 
