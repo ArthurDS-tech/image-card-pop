@@ -63,15 +63,9 @@ const VoiceChatTag = () => {
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
       >
-        {/* Audio Icon */}
+        {/* Plus Icon */}
         <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" className="text-primary-foreground">
-            <rect x="4" y="8" width="2" height="8" rx="1" fill="currentColor" />
-            <rect x="8" y="5" width="2" height="14" rx="1" fill="currentColor" />
-            <rect x="12" y="8" width="2" height="8" rx="1" fill="currentColor" />
-            <rect x="16" y="3" width="2" height="18" rx="1" fill="currentColor" />
-            <rect x="20" y="10" width="2" height="4" rx="1" fill="currentColor" />
-          </svg>
+          <Plus size={18} className="text-primary-foreground" />
         </div>
 
         {/* Stacked Avatars */}
