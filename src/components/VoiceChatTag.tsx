@@ -114,41 +114,40 @@ const VoiceChatTag = () => {
             />
 
             <motion.div
-              className="absolute bottom-full left-1/2 z-50 mb-3 w-[340px] -translate-x-1/2 rounded-2xl bg-card p-6 shadow-2xl"
-              initial={{ opacity: 0, scale: 0.9, y: 20 }}
+              className="absolute bottom-full left-1/2 z-50 mb-2 w-[280px] -translate-x-1/2 rounded-xl bg-card p-4 shadow-xl"
+              initial={{ opacity: 0, scale: 0.9, y: 10 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.95, y: 10 }}
+              exit={{ opacity: 0, scale: 0.95, y: 5 }}
               transition={{ type: "spring", damping: 25, stiffness: 300 }}
             >
               {/* Header */}
-              <div className="flex items-center justify-between mb-6">
-                <div className="w-8" />
-                <h2 className="text-lg font-semibold text-foreground">Voice Chat</h2>
+              <div className="flex items-center justify-between mb-3">
+                <h2 className="text-sm font-semibold text-foreground">Etiquetas</h2>
                 <button
                   onClick={() => setIsOpen(false)}
-                  className="flex h-8 w-8 items-center justify-center rounded-full text-muted-foreground hover:bg-muted transition-colors"
+                  className="flex h-6 w-6 items-center justify-center rounded-full text-muted-foreground hover:bg-muted transition-colors"
                 >
-                  <X size={18} />
+                  <X size={14} />
                 </button>
               </div>
 
               {/* Participants Grid */}
-              <div className="grid grid-cols-4 gap-4 mb-6">
+              <div className="grid grid-cols-5 gap-2 mb-3">
                 <AnimatePresence>
                   {participants.map((participant, index) => (
                     <motion.div
                       key={participant.id}
-                      className="flex flex-col items-center gap-2 group"
-                      initial={{ opacity: 0, y: 20 }}
+                      className="flex flex-col items-center gap-1 group"
+                      initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, scale: 0.8 }}
-                      transition={{ delay: index * 0.05 + 0.1 }}
+                      transition={{ delay: index * 0.03 }}
                     >
                       <div className="relative">
                         <div
-                          className={`h-14 w-14 rounded-full overflow-hidden border-2 transition-all ${
+                          className={`h-10 w-10 rounded-full overflow-hidden border-2 transition-all ${
                             participant.isSpeaking
-                              ? "border-voice-active shadow-[0_0_0_2px_hsl(var(--voice-active)/0.3)]"
+                              ? "border-voice-active"
                               : "border-transparent"
                           }`}
                         >
@@ -162,22 +161,12 @@ const VoiceChatTag = () => {
                         {/* Remove button on hover */}
                         <button
                           onClick={() => removeParticipant(participant.id)}
-                          className="absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-destructive text-destructive-foreground opacity-0 group-hover:opacity-100 transition-opacity shadow-sm hover:scale-110"
+                          className="absolute -top-0.5 -right-0.5 flex h-4 w-4 items-center justify-center rounded-full bg-destructive text-destructive-foreground opacity-0 group-hover:opacity-100 transition-opacity"
                         >
-                          <X size={12} />
+                          <X size={10} />
                         </button>
-
-                        {participant.isSpeaking && (
-                          <div className="absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-card shadow-sm group-hover:opacity-0 transition-opacity">
-                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
-                              <rect x="6" y="8" width="2" height="8" rx="1" fill="hsl(var(--foreground))" />
-                              <rect x="11" y="5" width="2" height="14" rx="1" fill="hsl(var(--foreground))" />
-                              <rect x="16" y="8" width="2" height="8" rx="1" fill="hsl(var(--foreground))" />
-                            </svg>
-                          </div>
-                        )}
                       </div>
-                      <span className="text-xs font-medium text-foreground truncate max-w-full">
+                      <span className="text-[10px] font-medium text-foreground truncate w-full text-center">
                         {participant.name}
                       </span>
                     </motion.div>
@@ -188,24 +177,23 @@ const VoiceChatTag = () => {
               {/* Tags Display */}
               {tags.length > 0 && (
                 <motion.div 
-                  className="flex flex-wrap gap-2 mb-4"
+                  className="flex flex-wrap gap-1.5 mb-3"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                 >
                   {tags.map((tag, index) => (
                     <motion.span
                       key={index}
-                      className="inline-flex items-center gap-1 rounded-full bg-secondary px-3 py-1.5 text-xs font-medium text-secondary-foreground group"
+                      className="inline-flex items-center gap-1 rounded-full bg-secondary px-2 py-1 text-[10px] font-medium text-secondary-foreground"
                       initial={{ opacity: 0, scale: 0.8 }}
                       animate={{ opacity: 1, scale: 1 }}
-                      exit={{ opacity: 0, scale: 0.8 }}
                     >
                       {tag}
                       <button
                         onClick={() => removeTag(index)}
-                        className="ml-1 rounded-full p-0.5 hover:bg-muted transition-colors"
+                        className="rounded-full p-0.5 hover:bg-muted transition-colors"
                       >
-                        <X size={10} />
+                        <X size={8} />
                       </button>
                     </motion.span>
                   ))}
@@ -216,26 +204,26 @@ const VoiceChatTag = () => {
               <AnimatePresence>
                 {isAddingTag ? (
                   <motion.div
-                    className="mb-4"
+                    className="mb-2"
                     initial={{ opacity: 0, height: 0 }}
                     animate={{ opacity: 1, height: "auto" }}
                     exit={{ opacity: 0, height: 0 }}
                   >
-                    <div className="flex gap-2">
+                    <div className="flex gap-1.5">
                       <input
                         type="text"
                         value={newTag}
                         onChange={(e) => setNewTag(e.target.value)}
                         onKeyDown={handleKeyDown}
-                        placeholder="Digite a etiqueta..."
-                        className="flex-1 rounded-xl border border-input bg-background px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-ring transition-all"
+                        placeholder="Digite..."
+                        className="flex-1 rounded-lg border border-input bg-background px-3 py-2 text-xs outline-none focus:ring-1 focus:ring-ring transition-all"
                         autoFocus
                       />
                       <button
                         onClick={addTag}
-                        className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary text-primary-foreground hover:opacity-90 transition-opacity"
+                        className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-primary-foreground hover:opacity-90 transition-opacity"
                       >
-                        <Plus size={18} />
+                        <Plus size={14} />
                       </button>
                     </div>
                   </motion.div>
@@ -244,18 +232,13 @@ const VoiceChatTag = () => {
 
               {/* Add Tag Button */}
               <motion.button
-                className="w-full rounded-xl bg-join-button py-4 text-sm font-semibold text-primary-foreground transition-colors hover:bg-join-button-hover"
+                className="w-full rounded-lg bg-join-button py-2.5 text-xs font-semibold text-primary-foreground transition-colors hover:bg-join-button-hover"
                 whileHover={{ scale: 1.01 }}
                 whileTap={{ scale: 0.99 }}
                 onClick={() => setIsAddingTag(true)}
               >
-                {isAddingTag ? "Adicionar Etiqueta" : "Adicionar Etiqueta"}
+                Adicionar Etiqueta
               </motion.button>
-
-              {/* Muted Notice */}
-              <p className="mt-4 text-center text-xs text-muted-foreground">
-                Clique para adicionar etiquetas ao chat.
-              </p>
             </motion.div>
           </>
         )}
