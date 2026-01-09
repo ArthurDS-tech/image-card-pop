@@ -57,6 +57,12 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        "voice-tag": "hsl(var(--voice-tag-bg))",
+        "voice-active": "hsl(var(--voice-active))",
+        "join-button": {
+          DEFAULT: "hsl(var(--join-button))",
+          hover: "hsl(var(--join-button-hover))",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
