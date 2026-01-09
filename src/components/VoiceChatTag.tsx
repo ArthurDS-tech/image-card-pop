@@ -82,7 +82,7 @@ const VoiceChatTag = () => {
         {isOpen && (
           <>
             <motion.div
-              className="fixed inset-0 z-40 bg-foreground/20 backdrop-blur-sm"
+              className="fixed inset-0 z-40"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -90,7 +90,7 @@ const VoiceChatTag = () => {
             />
 
             <motion.div
-              className="fixed left-1/2 top-1/2 z-50 w-[340px] -translate-x-1/2 -translate-y-1/2 rounded-2xl bg-card p-6 shadow-2xl"
+              className="absolute bottom-full left-1/2 z-50 mb-3 w-[340px] -translate-x-1/2 rounded-2xl bg-card p-6 shadow-2xl"
               initial={{ opacity: 0, scale: 0.9, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 10 }}
